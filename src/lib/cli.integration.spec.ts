@@ -76,7 +76,7 @@ test.serial('--fix', t => {
 
   assertFileContent(
     t,
-    'file-javascript-plain.js',
+    'file-javascript-no-header.js',
     '/* © 2022 CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
@@ -116,7 +116,7 @@ test.serial('--forceModificationYear present', t => {
 
   assertFileContent(
     t,
-    'file-javascript-plain.js',
+    'file-javascript-no-header.js',
     '/* © 2022-present CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
@@ -156,7 +156,7 @@ test.serial('--forceModificationYear number', t => {
 
   assertFileContent(
     t,
-    'file-javascript-plain.js',
+    'file-javascript-no-header.js',
     '/* © 2022 CopyrightHolder */\n\n' + "console.log('Test');"
   );
 

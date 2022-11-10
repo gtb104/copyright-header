@@ -33,11 +33,11 @@ collectFilesTest.title = (
 ) => `collectFiles - ${providedTitle}: ${include} => ${expected}`;
 
 const ALL_TEST_DATA_FILES: ReadonlyArray<string> = [
-  'test-data/file-javascript-plain.js',
+  'test-data/file-javascript-no-header.js',
   'test-data/file-javascript-with-header-start-year-to-present.js',
   'test-data/file-javascript-with-header-start-year-to-year.js',
   'test-data/file-javascript-with-start-year.js',
-  'test-data/file-typescript-plain.ts'
+  'test-data/file-typescript-no-header.ts'
 ];
 
 test('matching files', collectFilesTest, ['test-data'], ALL_TEST_DATA_FILES);

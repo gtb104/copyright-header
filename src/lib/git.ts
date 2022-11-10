@@ -1,4 +1,4 @@
-/* Copyright (c) 2018-2019 Marco Stahl */
+/* © 2018-2022 Marco Stahl */
 
 import * as child_process from 'child_process';
 import { first, getYearFromTimestamp, last, mapOptional } from './utils';
@@ -15,7 +15,10 @@ function execToLines(execAndArgs: string[]): string[] {
     .filter(line => line);
 }
 
-export function getGitFiles(): string[] {
+export function getGitFiles(onlyChanged?: boolean): string[] {
+  if (onlyChanged) {
+    return execToLines(['git', 'diff', '--name-only', '--cached']);
+  }
   return execToLines(['git', 'ls-files']);
 }
 

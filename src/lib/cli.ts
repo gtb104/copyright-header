@@ -1,7 +1,7 @@
-/* Copyright (c) 2018 Marco Stahl */
+/* © 2018-2022 Marco Stahl */
 
 import { Command } from 'commander';
-import { ensureUpdatedCopyrightHeader, FileFilter } from './copyright-header';
+import { ensureUpdatedCopyrightHeader } from './copyright-header';
 import { DEFAULT_TEMPLATE_ID, TEMPLATE_IDS, TEMPLATES } from './templates';
 import { ToYear } from './types';
 import { mapOptional, Result } from './utils';
@@ -11,27 +11,35 @@ export const enum ExitCode {
   ERROR = 1
 }
 
-export interface CliOptions extends FileFilter {
+export interface CliOptions {
   readonly copyrightHolder: string;
-  readonly fix: boolean;
-  readonly templateId: string;
+  readonly exclude: ReadonlyArray<string>;
   readonly excludeCommits?: string;
+  readonly fix: boolean;
   readonly forceModificationYear?: string;
+  readonly include: ReadonlyArray<string>;
+  readonly onlyChanged: boolean;
+  readonly templateId: string;
 }
 
 export function runCli(argv: string[], version = 'unknown'): ExitCode {
-  const commander = new Command();
-  commander
+  const program = new Command();
+  program
     .option('--copyrightHolder <name>', 'Copyright Holder')
-    .option('--fix', 'adds or updates copyright header to files', false)
-    .option('--templateId <id>', TEMPLATE_IDS.join(' | '), DEFAULT_TEMPLATE_ID)
-    .option('-i, --include <paths>', 'include regexp file filter', parseList, [])
     .option('-e, --exclude <paths>', 'exclude regexp file filter', parseList, [])
-    .option('--forceModificationYear <year>', 'number | "present"')
     .option('--excludeCommits <pattern>', 'ignores commits which message match this pattern')
+    .option('--fix', 'adds or updates copyright header to files', false)
+    .option('--forceModificationYear <year>', 'number | "present"')
+    .option('-i, --include <paths>', 'include regexp file filter', parseList, [])
+    .option('--onlyChanged', 'Inspect only changed files', false)
+    .option('--templateId <id>', TEMPLATE_IDS.join(' | '), DEFAULT_TEMPLATE_ID)
     .version(version);
 
-  const options: CliOptions = commander.parse(argv) as any;
+  // parse the options from the command line
+  program.parse(argv);
+
+  // get the options as an object
+  const options: CliOptions = program.opts() as any;
 
   if (!options.copyrightHolder) {
     return reportError('Please specify --copyrightHolder');
@@ -47,13 +55,14 @@ export function runCli(argv: string[], version = 'unknown'): ExitCode {
   }
 
   const result = ensureUpdatedCopyrightHeader({
-    include: options.include,
-    fix: options.fix,
-    exclude: options.exclude,
     copyrightHolder: options.copyrightHolder,
+    exclude: options.exclude,
     excludeCommits: options.excludeCommits,
-    template: TEMPLATES[options.templateId],
-    forceModificationYear: forceModificationYear
+    fix: options.fix,
+    forceModificationYear: forceModificationYear,
+    include: options.include,
+    onlyChanged: options.onlyChanged,
+    template: TEMPLATES[options.templateId]
   });
 
   return result.unFixedFiles.length ? ExitCode.ERROR : ExitCode.OK;

@@ -1,3 +1,3 @@
-/* Copyright (c) 2015-2017 CopyrightHolder */
+/* © 2015-2022 CopyrightHolder */
 
 console.log('Test');

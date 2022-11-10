@@ -1,4 +1,4 @@
-/* Copyright (c) 2018-2019 Marco Stahl */
+/* © 2018-2022 Marco Stahl */
 
 import * as fs from 'fs';
 import * as path from 'path';
@@ -23,21 +23,19 @@ const CREATIVE_FILE_EXTENSIONS: ReadonlyArray<string> = [
   'cp'
 ];
 
-const COPYRIGHT_HEADER_REGEXP = /^(\s*)(\/\*[\s\S]*?Copyright[\s\S]*?\*\/)/;
+const COPYRIGHT_HEADER_REGEXP = /^(\s*)(\/\*[\s\S]*?©[\s\S]*?\*\/)/;
 const FIND_YEARS_REGEXP = /\b20\d{2}\b|present/g;
 const HASHBANG_REGEXP = /^(#\!.*?\n)(.*)$/s;
 
-export interface FileFilter {
-  readonly include: ReadonlyArray<string>;
+export interface ValidatedOptions {
   readonly exclude: ReadonlyArray<string>;
-}
-
-export interface ValidatedOptions extends FileFilter {
+  readonly include: ReadonlyArray<string>;
   readonly copyrightHolder: string;
-  readonly fix: boolean;
   readonly excludeCommits?: string;
-  readonly template: string;
+  readonly fix: boolean;
   readonly forceModificationYear?: ToYear;
+  readonly onlyChanged: boolean;
+  readonly template: string;
 }
 
 interface ValidationResult {
@@ -82,14 +80,14 @@ function useTodayAsYearDefault(fileinfo: GitFileInfo): FileInfo {
   };
 }
 
-function collectFiles(fileFilter: FileFilter): ReadonlyArray<string> {
-  const gitFiles = getGitFiles();
+function collectFiles(options: ValidatedOptions): ReadonlyArray<string> {
+  const gitFiles = getGitFiles(options.onlyChanged);
 
-  const includeRegexps = fileFilter.include.map(pattern => new RegExp(pattern));
+  const includeRegexps = options.include.map(pattern => new RegExp(pattern));
   const includeFilter = (filename: string) =>
     includeRegexps.length === 0 || includeRegexps.some(regexp => regexp.test(filename));
 
-  const excludeRegexps = fileFilter.exclude.map(pattern => new RegExp(pattern));
+  const excludeRegexps = options.exclude.map(pattern => new RegExp(pattern));
   const excludeFilter = (filename: string) =>
     excludeRegexps.length === 0 || !excludeRegexps.some(regexp => regexp.test(filename));
 

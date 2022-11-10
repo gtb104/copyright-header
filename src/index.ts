@@ -1,3 +1,3 @@
-/* Copyright (c) 2018 Marco Stahl */
+/* © 2018-2022 Marco Stahl */
 
 export * from './lib/copyright-header';

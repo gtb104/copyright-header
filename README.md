@@ -64,4 +64,4 @@ MIT
 
 ## Copyright
 
-Copyright (c) 2019 Marco Stahl
+© 2019 Marco Stahl

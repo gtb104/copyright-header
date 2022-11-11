@@ -33,7 +33,6 @@
     "fix:tslint": "tslint --fix --project .",
     "fix:copyright": "node build/main/cli.js --fix --copyrightHolder \"Marco Stahl\" --include src",
     "info": "npm-scripts-info",
-    "postinstall": "cd ./node_modules/copyright-header && npm install && npm run build",
     "prepare-release": "run-s all version",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "revertTestData": "git checkout HEAD -- test-data",

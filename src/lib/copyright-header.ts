@@ -23,7 +23,7 @@ const CREATIVE_FILE_EXTENSIONS: ReadonlyArray<string> = [
   'cp'
 ];
 
-const COPYRIGHT_HEADER_REGEXP = /^(\s*)(\/\*[\s\S]*?©[\s\S]*?\*\/)/;
+const COPYRIGHT_HEADER_REGEXP = /^(\s*)(\/\*[\s\S]*?(?:©|Copyright \(c\))[\s\S]*?\*\/)/;
 const FIND_YEARS_REGEXP = /\b20\d{2}\b|present/g;
 const HASHBANG_REGEXP = /^(#\!.*?\n)(.*)$/s;
 

@@ -1,4 +1,4 @@
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 
 import * as fs from 'fs';
 import * as path from 'path';

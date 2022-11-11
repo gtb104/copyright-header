@@ -1,4 +1,4 @@
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 
 interface StringMap {
   readonly [key: string]: string;
@@ -7,10 +7,10 @@ interface StringMap {
 export const DEFAULT_TEMPLATE_ID = 'minimal';
 
 export const TEMPLATES: StringMap = {
-  [DEFAULT_TEMPLATE_ID]: '/* © $from$to $copyrightHolder */',
+  [DEFAULT_TEMPLATE_ID]: '/* Copyright (c) $from$to $copyrightHolder */',
   apache: `
 /*
- * © $from$to $copyrightHolder
+ * Copyright (c) $from$to $copyrightHolder
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ export const TEMPLATES: StringMap = {
 `.trim(),
   gplv3: `
 /*
- * © $from$to $copyrightHolder.
+ * Copyright (c) $from$to $copyrightHolder.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

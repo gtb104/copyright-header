@@ -1,4 +1,4 @@
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 
 // tslint:disable:no-expression-statement no-object-mutation
 

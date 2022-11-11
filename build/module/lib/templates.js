@@ -1,10 +1,10 @@
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 export const DEFAULT_TEMPLATE_ID = 'minimal';
 export const TEMPLATES = {
-    [DEFAULT_TEMPLATE_ID]: '/* © $from$to $copyrightHolder */',
+    [DEFAULT_TEMPLATE_ID]: '/* Copyright (c) $from$to $copyrightHolder */',
     apache: `
 /*
- * © $from$to $copyrightHolder
+ * Copyright (c) $from$to $copyrightHolder
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ export const TEMPLATES = {
 `.trim(),
     gplv3: `
 /*
- * © $from$to $copyrightHolder.
+ * Copyright (c) $from$to $copyrightHolder.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,4 +38,4 @@ export const TEMPLATES = {
 `.trim()
 };
 export const TEMPLATE_IDS = Object.keys(TEMPLATES);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVtcGxhdGVzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2xpYi90ZW1wbGF0ZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsNkJBQTZCO0FBTTdCLE1BQU0sQ0FBQyxNQUFNLG1CQUFtQixHQUFHLFNBQVMsQ0FBQztBQUU3QyxNQUFNLENBQUMsTUFBTSxTQUFTLEdBQWM7SUFDbEMsQ0FBQyxtQkFBbUIsQ0FBQyxFQUFFLG1DQUFtQztJQUMxRCxNQUFNLEVBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7Q0FnQlQsQ0FBQyxJQUFJLEVBQUU7SUFDTixLQUFLLEVBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7Q0FnQlIsQ0FBQyxJQUFJLEVBQUU7Q0FDUCxDQUFDO0FBRUYsTUFBTSxDQUFDLE1BQU0sWUFBWSxHQUFHLE1BQU0sQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUMifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVtcGxhdGVzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2xpYi90ZW1wbGF0ZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEseUNBQXlDO0FBTXpDLE1BQU0sQ0FBQyxNQUFNLG1CQUFtQixHQUFHLFNBQVMsQ0FBQztBQUU3QyxNQUFNLENBQUMsTUFBTSxTQUFTLEdBQWM7SUFDbEMsQ0FBQyxtQkFBbUIsQ0FBQyxFQUFFLCtDQUErQztJQUN0RSxNQUFNLEVBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7Q0FnQlQsQ0FBQyxJQUFJLEVBQUU7SUFDTixLQUFLLEVBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7Q0FnQlIsQ0FBQyxJQUFJLEVBQUU7Q0FDUCxDQUFDO0FBRUYsTUFBTSxDQUFDLE1BQU0sWUFBWSxHQUFHLE1BQU0sQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUMifQ==

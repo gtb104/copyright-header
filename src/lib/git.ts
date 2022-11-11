@@ -1,4 +1,4 @@
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 
 import * as child_process from 'child_process';
 import { first, getYearFromTimestamp, last, mapOptional } from './utils';

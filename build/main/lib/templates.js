@@ -1,13 +1,13 @@
 "use strict";
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TEMPLATE_IDS = exports.TEMPLATES = exports.DEFAULT_TEMPLATE_ID = void 0;
 exports.DEFAULT_TEMPLATE_ID = 'minimal';
 exports.TEMPLATES = {
-    [exports.DEFAULT_TEMPLATE_ID]: '/* © $from$to $copyrightHolder */',
+    [exports.DEFAULT_TEMPLATE_ID]: '/* Copyright (c) $from$to $copyrightHolder */',
     apache: `
 /*
- * © $from$to $copyrightHolder
+ * Copyright (c) $from$to $copyrightHolder
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ exports.TEMPLATES = {
 `.trim(),
     gplv3: `
 /*
- * © $from$to $copyrightHolder.
+ * Copyright (c) $from$to $copyrightHolder.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,4 +41,4 @@ exports.TEMPLATES = {
 `.trim()
 };
 exports.TEMPLATE_IDS = Object.keys(exports.TEMPLATES);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVtcGxhdGVzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2xpYi90ZW1wbGF0ZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLDZCQUE2Qjs7O0FBTWhCLFFBQUEsbUJBQW1CLEdBQUcsU0FBUyxDQUFDO0FBRWhDLFFBQUEsU0FBUyxHQUFjO0lBQ2xDLENBQUMsMkJBQW1CLENBQUMsRUFBRSxtQ0FBbUM7SUFDMUQsTUFBTSxFQUFFOzs7Ozs7Ozs7Ozs7Ozs7O0NBZ0JULENBQUMsSUFBSSxFQUFFO0lBQ04sS0FBSyxFQUFFOzs7Ozs7Ozs7Ozs7Ozs7O0NBZ0JSLENBQUMsSUFBSSxFQUFFO0NBQ1AsQ0FBQztBQUVXLFFBQUEsWUFBWSxHQUFHLE1BQU0sQ0FBQyxJQUFJLENBQUMsaUJBQVMsQ0FBQyxDQUFDIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVtcGxhdGVzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2xpYi90ZW1wbGF0ZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLHlDQUF5Qzs7O0FBTTVCLFFBQUEsbUJBQW1CLEdBQUcsU0FBUyxDQUFDO0FBRWhDLFFBQUEsU0FBUyxHQUFjO0lBQ2xDLENBQUMsMkJBQW1CLENBQUMsRUFBRSwrQ0FBK0M7SUFDdEUsTUFBTSxFQUFFOzs7Ozs7Ozs7Ozs7Ozs7O0NBZ0JULENBQUMsSUFBSSxFQUFFO0lBQ04sS0FBSyxFQUFFOzs7Ozs7Ozs7Ozs7Ozs7O0NBZ0JSLENBQUMsSUFBSSxFQUFFO0NBQ1AsQ0FBQztBQUVXLFFBQUEsWUFBWSxHQUFHLE1BQU0sQ0FBQyxJQUFJLENBQUMsaUJBQVMsQ0FBQyxDQUFDIn0=

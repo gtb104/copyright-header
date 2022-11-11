@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 
 // tslint:disable-next-line:no-var-requires
 const { version } = require('../../package.json');

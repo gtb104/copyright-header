@@ -1,4 +1,4 @@
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 
 // Seems pointless, but makes things more type-safe.
 export function first<T>(array: ReadonlyArray<T>): T | undefined {

@@ -1,4 +1,4 @@
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 
 import test, { ExecutionContext } from 'ava';
 import { testExports, ValidatedOptions } from './copyright-header';
@@ -100,7 +100,7 @@ test('hashbang', t => {
   const expected = [
     '#!/bin/sh -some -options',
     '',
-    '/* © 2002-2017 Test User, Inc. */',
+    '/* Copyright (c) 2002-2017 Test User, Inc. */',
     '',
     'File content',
     'is here',

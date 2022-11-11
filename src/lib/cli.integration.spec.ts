@@ -1,4 +1,4 @@
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 
 import test, { ExecutionContext } from 'ava';
 import * as child_process from 'child_process';
@@ -77,25 +77,25 @@ test.serial('--fix', t => {
   assertFileContent(
     t,
     'file-javascript-no-header.js',
-    '/* © 2022 CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2022 CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
   assertFileContent(
     t,
     'file-javascript-with-start-year.js',
-    '/* © 2022 CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2022 CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
   assertFileContent(
     t,
     'file-javascript-with-header-start-year-to-year.js',
-    '/* © 2015-2022 CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2015-2022 CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
   assertFileContent(
     t,
     'file-javascript-with-header-start-year-to-present.js',
-    '/* © 2014-present CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2014-present CopyrightHolder */\n\n' + "console.log('Test');"
   );
 });
 
@@ -117,25 +117,25 @@ test.serial('--forceModificationYear present', t => {
   assertFileContent(
     t,
     'file-javascript-no-header.js',
-    '/* © 2022-present CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2022-present CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
   assertFileContent(
     t,
     'file-javascript-with-start-year.js',
-    '/* © 2022-present CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2022-present CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
   assertFileContent(
     t,
     'file-javascript-with-header-start-year-to-year.js',
-    '/* © 2015-present CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2015-present CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
   assertFileContent(
     t,
     'file-javascript-with-header-start-year-to-present.js',
-    '/* © 2014-present CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2014-present CopyrightHolder */\n\n' + "console.log('Test');"
   );
 });
 
@@ -157,25 +157,25 @@ test.serial('--forceModificationYear number', t => {
   assertFileContent(
     t,
     'file-javascript-no-header.js',
-    '/* © 2022 CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2022 CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
   assertFileContent(
     t,
     'file-javascript-with-start-year.js',
-    '/* © 2022 CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2022 CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
   assertFileContent(
     t,
     'file-javascript-with-header-start-year-to-year.js',
-    '/* © 2015-2022 CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2015-2022 CopyrightHolder */\n\n' + "console.log('Test');"
   );
 
   assertFileContent(
     t,
     'file-javascript-with-header-start-year-to-present.js',
-    '/* © 2014-2022 CopyrightHolder */\n\n' + "console.log('Test');"
+    '/* Copyright (c) 2014-2022 CopyrightHolder */\n\n' + "console.log('Test');"
   );
 });
 

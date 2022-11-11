@@ -1,4 +1,4 @@
-/* © 2018-2022 Marco Stahl */
+/* Copyright (c) 2018-2022 Marco Stahl */
 
 import test from 'ava';
 import { renderSimpleTemplate } from './simple-template';

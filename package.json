@@ -1,6 +1,6 @@
 {
   "name": "copyright-header",
-  "version": "0.4.6",
+  "version": "0.5.0",
   "description": "Validate, add and update copyright headers automatically, based on the git history.",
   "bin": {
     "copyright-header": "build/main/cli.js"
@@ -33,7 +33,7 @@
     "fix:tslint": "tslint --fix --project .",
     "fix:copyright": "node build/main/cli.js --fix --copyrightHolder \"Marco Stahl\" --include src",
     "info": "npm-scripts-info",
-    "prepare": "cd ./node_modules/copyright-header && npm install && npm run build",
+    "postinstall": "cd ./node_modules/copyright-header && npm install && npm run build",
     "prepare-release": "run-s all version",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "revertTestData": "git checkout HEAD -- test-data",
